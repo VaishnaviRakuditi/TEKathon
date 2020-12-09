@@ -22,8 +22,9 @@ public class UserController {
 	UserRepository userRepository;
 	
 	@GetMapping("/getUserDetail")
-	public User getUser() {
+	public User getUser(@RequestBody long userId) {
 		User user = new User();
+//		user = userRepository.findById(userId);
 		//DBCALL needed assign the data to the userobject
 		return user;
 	}
@@ -39,7 +40,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/updateUser")
-	public String updateUser(@RequestBody User user) {
+	public String updateUser() {
 		return "Get User Created";
 	}
 	
